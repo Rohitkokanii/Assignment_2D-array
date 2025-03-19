@@ -10,7 +10,7 @@ int main() {
 
 	int m1[SIZE][SIZE];
 	int m2[SIZE][SIZE];
-	int r[SIZE][SIZE];
+	int res[SIZE][SIZE];
 
 	printf("\nEnter 3*3 Matrix 1st : ");
 	for (int i = 0; i < SIZE; i++) {
@@ -29,20 +29,25 @@ int main() {
 	}
 
 	//mul
-	for (int i = 0; i < SIZE; i++) {
-
-		for (int j = 0; j < SIZE; j++) {
-			r[i][j] = m1[i][j] * m2[i][j];
+	for (int r = 0; r < 3; r++) {
+		for (int i = 0; i < 3; i++) {
+			int sum = 0;
+			int val = 0;
+			for (int j = 0; j < 3; j++) {
+				val = m1[r][j] * m2[j][i];
+				sum = sum + val;
+			}
+			res[r][i] = sum;
 		}
 	}
 
 
 	//Display 
-	
+	printf("\nMultiplication is : ");
 	for (int i = 0; i < SIZE; i++) {
 
 		for (int j = 0; j < SIZE; j++) {
-			printf("%d ", r[i][j]);
+			printf("%d ", res[i][j]);
 		}
 		printf("\n");
 	}
