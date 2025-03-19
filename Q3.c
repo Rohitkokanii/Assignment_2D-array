@@ -29,13 +29,12 @@ int main() {
 	}
 
 	//mul
-	for (int r = 0; r < 3; r++) {
-		for (int i = 0; i < 3; i++) {
+	for (int r = 0; r < SIZE; r++) {
+		for (int i = 0; i < SIZE; i++) {
 			int sum = 0;
-			int val = 0;
-			for (int j = 0; j < 3; j++) {
-				val = m1[r][j] * m2[j][i];
-				sum = sum + val;
+			//int val = 0;
+			for (int j = 0; j < SIZE; j++) {
+				sum = sum + (m1[r][j] * m2[j][i]);
 			}
 			res[r][i] = sum;
 		}
